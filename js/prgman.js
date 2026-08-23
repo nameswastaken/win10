@@ -5,7 +5,9 @@ function focus(uid) {
     const others = document.querySelectorAll(`window-elem:not([btn-uid="${uid}"])`);
     others.forEach((other) => { minimizeapp(other.getAttribute('btn-uid'), other.container.style.left, other.container.style.top); });
     app.container.style.zIndex = "1000";
+    app.container.style.boxShadow = "0px 0px 20px 5px rgba(0,0,0,0.5)";
     others.forEach((other) => { other.container.style.zIndex = "10"; });
+    others.forEach((other) => { other.container.style.boxShadow = "0px 0px 10px 2px rgba(0,0,0,0.5)"; });
 }
 function launch(uid, appstatus, posx, posy) {
     if (appstatus === 0) {
