@@ -43,7 +43,7 @@
             transition: 0.15s linear;
         }
         #startbutton:hover {
-            background-color: rgb(18, 18, 18);
+            background-color: rgb(22, 22, 22);
             transition: 0.15s linear;
         }
         #startbutton img:hover {
@@ -109,10 +109,10 @@
             transition: 0.15s;
         }
         .taskbarapp:hover {
-            background-color: rgb(18, 18, 18);
+            background-color: rgb(22,22,22);
             transition: 0.15s;
         }
-        #defaultbutton {
+        .taskbarbutton {
             transition: 0.15s;
             background-color: inherit;
             border: none;
@@ -122,12 +122,23 @@
             color: white;
             font-family: 'Segoe UI';
         }
-        #defaultbutton:hover {
+        .taskbarbutton:hover {
             transition: 0.15s;
-            background-color: rgb(18, 18, 18);
+            background-color: rgb(22, 22, 22);
         }
         .win-btn {
             font-family: 'Segoe Icon';
+        }
+        .segoeicon span {
+            font-family: 'Segoe Icon';
+            font-size: 14px;
+        }
+        .moretaskbarbutton span {
+            font-size: 12px;
+            padding: 0px 2px 0px 2px;
+        }
+        .actioncenterbutton {
+            padding: 0px 10px 0px 10px;
         }
     </style>
 </head>
@@ -136,12 +147,14 @@
         <button id="startbutton"><img src="icon.svg"></button>
         <input id="searchbar" type="text" placeholder="Search the web and Windows"></input>
         <div id="statusicons">
-            <button id="defaultbutton"><img src="icns/ethernet.ico"></button>
-            <button id="defaultbutton"><img src="icns/volume-mute.ico"></button>
-            <button id="defaultbutton"><div id="datetime">
+            <button id="" class="segoeicon taskbarbutton moretaskbarbutton"><span>&#xE971;</span></button>
+            <button id="" class="segoeicon taskbarbutton"><span>&#xE839;</span></button>
+            <button id="" class="segoeicon taskbarbutton"><span>&#xE15D;</span></button>
+            <button id="" class="taskbarbutton"><div id="datetime">
                 <span id="timetaskbar">12:00 AM</span>
                 <span id="datetaskbar">1/1/2015</span>
             </div>
+            <button class="segoeicon taskbarbutton actioncenterbutton"><span>&#xE91C;</span></button>
             </button>
             <button id="showdesktop"></button>
         </div>

@@ -41,6 +41,10 @@
                 .win-btn:hover {
                     background-color: #dedede;
                 }
+                #close:hover {
+                    background-color: #ff0000; 
+                    color: white;
+                }
                 .titlebar {
                     display: flex;
                     flex-direction: row;
