@@ -1,33 +1,25 @@
 function draggable(elem) {
-    var pos1 = 0, pos2 = 0, pos3 = 0, pos4 = 0;
+    const target = elem.querySelector('.titlebar');
 
-    const root = elem.getRootNode();
-    const header = root.getElementById ? root.getElementById(elem.id + "header") : document.getElementById(elem.id + "header");
-    const target = header || elem.shadowRoot?.querySelector('.titlebar') || elem.querySelector('.titlebar') || elem;
+    let dragged = false;
+    let offsetX = 0;
+    let offsetY = 0
 
-    target.onmousedown = dragMouseDown;
+    console.log(target)
+    target.addEventListener('pointerdown', (e) => {
+        dragged = true;
+        const rect = elem.getBoundingClientRect();
 
-    function dragMouseDown(e) {
-        e = e || window.event;
-        e.preventDefault();
-        pos3 = e.clientX;
-        pos4 = e.clientY;
-        document.onmouseup = closeDragElement;
-        document.onmousemove = elementDrag;
-    }
-    function elementDrag(e) {
-        e = e || window.event;
-        e.preventDefault();
-        pos1 = pos3 - e.clientX;
-        pos2 = pos4 - e.clientY;
-        pos3 = e.clientX;
-        pos4 = e.clientY;
-        elem.style.top = (elem.offsetTop - pos2) + "px";
-        elem.style.left = (elem.offsetLeft - pos1) + "px";
-    }
-    function closeDragElement() {
-        document.onmouseup = null;
-        document.onmousemove = null;
-    }
+        offsetX = e.clientX - rect.x;
+        offsetY = e.clientY - rect.y;
+    });
+    document.addEventListener('pointermove', (e) => {
+        if (!dragged) return;
+
+        elem.style.left = `${e.clientX - offsetX}px`
+        elem.style.top = `${e.clientY - offsetY}px`
+    });
+    document.addEventListener('pointerup', (e) => {
+        dragged = false;
+    });
 }
-// stolen

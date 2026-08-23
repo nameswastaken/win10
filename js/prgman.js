@@ -9,17 +9,14 @@ function focus(uid) {
 }
 function launch(uid, appstatus, posx, posy) {
     if (appstatus === 0) {
-        alert("is functioning");
         const appfind = applist.find(element => String(element.uid) === String(uid));
         const app = document.createElement("window-elem");
         app.setAttribute('iframe-source', `./programs/${uid}/${appfind.launch}`);
         app.setAttribute('window-name', appfind.displayname);
         document.body.appendChild(app);
         app.setAttribute('btn-uid', appfind.uid);
-        alert(appfind);
         focus(uid);
     } else if (appstatus === 2) {
-        alert("is minimized");
         const appfind = applist.find(element => String(element.uid) === String(uid));
         const app = document.querySelector(`window-elem[btn-uid="${uid}"]`);
         app.container.style.left = posx + "px";

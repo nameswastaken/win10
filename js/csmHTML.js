@@ -11,7 +11,7 @@
             style.textContent = `
                 #windowdev {
                     padding: 0px;
-                    background-color: #f1f1f1;
+                    background-color: #ffff;
                     width: 400px;
                     height: 300px;
                     display: flex;
@@ -20,29 +20,35 @@
                     resize: both;
                     overflow: hidden;
                     outline: none;
-                    border: solid 1px black;
                 }
                 button {
                     font-family: 'Segoe Icon';
                     color: black;
                     border: none;
                     outline: none;
-                    width: 35px;
-                    height: 35px;
-                    font-size: 11px;
+                    width: 40px;
+                    height: 25px;
+                    font-size: 9px;
+                    background-color: #ffff;
                 }
                 .windowbuttons {
                     display: flex;
                     justify-content: right;
                 }
+                .win-btn {
+                    transition: background-color .2s;
+                }
+                .win-btn:hover {
+                    background-color: #dedede;
+                }
                 .titlebar {
                     display: flex;
                     flex-direction: row;
-                    font-size: 7px;
+                    font-size: 6px;
                     font-family: 'Segoe UI Light';
                     white-space: nowrap;
                     flex-shrink: 0;
-                    height: 35px;
+                    height: 25px;
                     width: 100%;
                     justify-content: space-between;
                     align-items: center;
