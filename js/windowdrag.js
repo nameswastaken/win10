@@ -7,6 +7,9 @@ function draggable(elem) {
 
     console.log(target)
     target.addEventListener('pointerdown', (e) => {
+        if (e.target.closest('.windowbuttons')) {
+            return;
+        }
         dragged = true;
         const rect = elem.getBoundingClientRect();
 
