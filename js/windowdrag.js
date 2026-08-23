@@ -12,6 +12,7 @@ function draggable(elem) {
 
         offsetX = e.clientX - rect.x;
         offsetY = e.clientY - rect.y;
+        target.setPointerCapture(e.pointerId);
     });
     document.addEventListener('pointermove', (e) => {
         if (!dragged) return;
@@ -21,5 +22,6 @@ function draggable(elem) {
     });
     document.addEventListener('pointerup', (e) => {
         dragged = false;
+        target.releasePointerCapture(e.pointerId);
     });
 }
