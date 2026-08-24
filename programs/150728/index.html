@@ -18,7 +18,7 @@
             src: url('../../fonts/Segoe UI Light.ttf');
         }
         html, body{
-        background-color: #cccccd;
+        background-color: #cccccc;
         border: 0;
         margin: 0;
         height: 100%;
@@ -44,7 +44,7 @@
         }
         .searchbar {
             height: 70%;
-            width: 50%;
+            width: 100%;
             background-color: #ffffff;
             border: 1px solid #cccccd;
             border-top: 1px solid #cccccd;
@@ -68,17 +68,88 @@
             border: none;
             border-left: solid 1px #cccccd;
         }
+        .navbar-Edge span {
+            font-family: 'Segoe Icon';
+        }
+        .leftbuttons {
+            margin-right: 20px;
+        }
+        .rightbuttons {
+            margin-left: 20px;
+        }
+        .leftbuttons, .rightbuttons {
+            display: flex;
+            height: 100%;
+        }
+        .leftbuttons button, .rightbuttons button {
+            height: 100%;
+            width: 50px;
+            background-color: inherit;
+            border: none;
+            outline: none;
+            font-size: 18px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .icon {
+            font-family: 'Segoe Icon';
+        }
+        .tabbar-Edge {
+            height: 35px;
+            display: flex;
+        }
+        .tabbar-Edge .tab {
+            display: flex;
+            align-items: center;
+            background-color: #f2f2f2;
+            border: 1px solid #cccccd;
+            flex-grow: 1;
+            max-width: 150px;
+            font-family: 'Segoe UI';
+        }
+        .tabbar-Edge .tab .tabimg-Edge {
+            width: 20px;
+            height: 20px;
+            margin-right: 5px;
+            font-family: 'Segoe Icon';
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 15px;
+        }
+        .tabbar-Edge .tab .icon {
+            margin-left: auto;
+        }
     </style>
 </head>
 <body>
+    <div id="tabbarEdge" class="tabbar-Edge">
+        <!--this is temporary unti i add tabbing because if its fixed it cannot be like dynamically added-->
+        <span class="icon">&#xF5ED;</span>
+        <button class="tab"></button>
+        <button id="addtabEdge" onclick="createtab();"><span class="icon">&#xE710;</span></button>
+    </div>
     <div class="navbar-Edge">
+        <div class="leftbuttons">
+            <button><span>&#xE72B;</span></button>
+            <button><span>&#xE72A;</span></button>
+            <button><span>&#xE72C;</span></button>
+        </div>
         <div class="searchbar">
             <button><span>&#xE72E;</span></button>
             <hr>
             <input type="text" id="urlsearch" placeholder="Search or enter web address" style="width: 100%; height: 90%; border: none; outline: none; font-family: 'Segoe UI'; font-size: 14px; padding-left: 10px;">
         </div>
+        <div class="rightbuttons">
+            <button><span>&#xE728;</span></button>
+            <button><span>&#xEE56;</span></button>
+            <button><span>&#xE72D;</span></button>
+            <button><span>&#xE712;</span></button>
+        </div>
     </div>
-    <iframe id="webpage" src="https://wikipedia.com"></iframe>
+    <iframe id="webpage" src="https://wikipedia.org"></iframe>
 </body>
 <script src="searchbar.js"></script>
+<script src="tab.js"></script>
 </html>
