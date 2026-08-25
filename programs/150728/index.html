@@ -118,7 +118,7 @@
             justify-content: center;
             font-size: 15px;
         }
-        .tabbar-Edge .tab .icon {
+        .tabbar-Edge .tab .close {
             margin-left: auto;
         }
     </style>
@@ -127,7 +127,11 @@
     <div id="tabbarEdge" class="tabbar-Edge">
         <!--this is temporary unti i add tabbing because if its fixed it cannot be like dynamically added-->
         <span class="icon">&#xF5ED;</span>
-        <button class="tab"></button>
+        <button class="tab">
+            <span class="tabimg-Edge">&#xF5ED;</span>
+            <span>Tab</span>
+            <span class="icon close">&#xE711;</span>
+        </button>
         <button id="addtabEdge" onclick="createtab();"><span class="icon">&#xE710;</span></button>
     </div>
     <div class="navbar-Edge">
