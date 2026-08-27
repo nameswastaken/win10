@@ -2,10 +2,11 @@
 const tabbar = document.getElementById("tabbarEdge");
 const create = document.getElementById("addtabEdge");
 const field = document.getElementById("urlsearch");
+let currentTab = "";
 let tabcount = 0;
 function createtab() {
     const tab = document.createElement("button");
-    tab.setAttribute("class", "tab");
+    tab.classList.add("tab");
     tabcount += 1;
     tab.setAttribute("id", `${tabcount}`);
     tab.innerHTML = '<span class="tabimg-Edge">&#xE774;</span><span>Tab</span><span class="icon close">&#xE711;</span>';
@@ -30,16 +31,21 @@ const activateTab = (app) => {
     others.forEach((other) => { other.style.zIndex = "19" });
 }
 const activatePage = (frame) => {
-    const reframe = document.getElementById(frame);
+    const reframe = document.getElementById(`page-${frame}`);
     const others = document.querySelectorAll(`iframe:not([id="page-${frame}"])`);
+    currentTab = reframe;
     reframe.style.display = "block";
     others.forEach((other) => { other.style.display = "none" });
 }
 field.addEventListener('keydown', function(event) {
     if (event.key === "Enter") {
         event.preventDefault();
-        const webpage = document.getElementById("webpage");
+        const webpage = currentTab;
         webpage.src = event.target.value;
     }
 });
+function refresh() {
+    const frame = currentTab;
+    frame.src = frame.src;
+}
 createtab();
