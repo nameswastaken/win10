@@ -26,6 +26,7 @@
             margin: 0;
             font-family: 'Segoe UI';
             overflow: hidden;
+            display: flex;
         }
         .taskbar {
             display: flex;
@@ -140,9 +141,45 @@
         .actioncenterbutton {
             padding: 0px 10px 0px 10px;
         }
+        .startmenu {
+            height: 740px;
+            width: 340px;
+            background-color: #1f1f1F;
+            bottom: 0;
+            position: absolute;
+            display: flex;
+        }
+        .sidebarstartmenu {
+            height: 100%;
+            width: 50px;
+        }
+        .startmenucontents {
+            height: 100%;
+            width: 290px;
+            background-color: red;
+        }
+        .startmenuapp {
+            width: 100%;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+        }
+        .startmenuapp img {
+            width: 23px;
+            height: 23px;
+            margin-left: 8px; 
+        }
     </style>
 </head>
 <body>
+    <div class="startmenu" id="startmenu">
+        <div class="sidebarstartmenu" id="sidebarStart">
+
+        </div>
+        <div class="startmenucontents" id="startmenucontents">
+
+        </div>
+    </div>
     <div id="taskbar" class="taskbar">
         <button id="startbutton"><img src="icon.svg"></button>
         <input id="searchbar" type="text" placeholder="Search the web and Windows"></input>
@@ -166,4 +203,5 @@
     <script src="./js/prgman.js"></script>
     <script src="./js/windowdrag.js"></script>
     <script src="./js/csmHTML.js"></script>
+    <script src="./js/startmenu.js"></script>
 </html>
